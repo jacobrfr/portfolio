@@ -1,12 +1,17 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse
+from django.views import generic
 
 from .models import Project
 
-def index(request):
-    projects = Project.objects.order_by('-pub_date')
-    context = {'projects': projects}
-    return render(request, 'projects/index.html', context)
+class IndexView(generic.ListView):
+    template_name = 'projects/index.html'
+    context_object_name = 'projects'
 
-def detail(request, project_id):
-    project = get_object_or_404(Project, pk=project_id)
-    return render(request, 'projects/detail.html', {'project': project})
+    def get_queryset(self):
+        return Project.objects.order_by('-pub_date')
+
+class DetailView(generic.DetailView):
+    model = Project
+    template_name = 'projects/detail.html'
