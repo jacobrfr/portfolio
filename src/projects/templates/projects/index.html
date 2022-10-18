@@ -1,9 +1,150 @@
-{% if projects %}
-    <ul>
-    {% for project in projects %}
-        <li><a href="{% url 'projects:detail' project.id %}">{{ project.title }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No projects are available.</p>
-{% endif %}
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; background-color: #102133">
+<head>
+    <meta charset="utf-8">
+    <title>Jacob Franklin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <style>
+        #logo {
+            height: 7.5%;
+            width: 5%;
+        }
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #102133;
+            height: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #048a94;
+        }
+
+        .navlink {
+            float: right;
+            margin-right: 25px;
+            margin-top: 2%;
+        }
+
+        .thumbnail {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .github {
+            float: right;
+            margin-top: 20px;
+        }
+
+        #work {
+            margin-top: 100px;
+            height: 90%;
+        }
+        #about {
+            margin-top: 60%%;
+        }
+
+        .section {
+            margin: auto;
+            width: 50%;
+        }
+
+        .section-header {
+            margin: auto;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        #work-header {
+            width:9%;
+        }
+        #about-header {
+            width: 9%;
+        }
+
+        p {
+            color: #048a94;
+        }
+
+        .intro {
+            margin: auto;
+            width: 50%;
+        }
+
+        #first {
+            font-size: 800%;
+            margin: 0px;
+            padding: 0px;
+            display: inline;
+        }
+        #last {
+            font-size: 800%;
+            margin: 0px;
+            padding-top: 0px;
+        }
+        #hi {
+            margin: 0;
+            display: inline;
+        }
+
+        .flex-container {
+            margin-top: 100px;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="../../static/projects/images/jf-low-resolution-color-logo.png">
+        <a class="navlink" href="https://github.com/jacobrfr"><b>GITHUB</b></a>
+        <a class="navlink" href="https://www.linkedin.com/in/jfra01/"><b>LINKEDIN</b></a>
+        <a class="navlink" href="#work"><b>WORK</b></a>
+        <a class="navlink" href="#about"><b>ABOUT</b></a>
+    </header>
+    <div class="intro flex-container">
+        <span id="hi">Hi, my name's</span>
+        <h1 id="first">JACOB</h1>
+        <h1 id="last">FRANKLIN</h1>
+    </div>
+    <div class="section" id="about">
+        <h1 class="section-header" id="about-header">ABOUT</h1>
+        <p>
+            Hello! I'm Jacob and I love building software! I became
+            interested in web development, game development and Python in
+            early high school. I've known since then that I would end up
+            programming for a living and for much of my spare time.
+        </p>
+        <p>
+            Today, I'm grateful to have earned a role in the IT industry as 
+            a Technical Support Engineer. In my free time, I work on side
+            projects, which this website is meant to help me and others 
+            track.
+        </p>
+    </div>
+    <div class="section" id="work">
+        <h1 class="section-header" id="work-header">WORK</h1>
+        {% if projects %}
+            {% for project in projects %}
+            <a href="{{ project.github }}">
+            <div class="project">
+                    <h1 style="display: inline">{{ project.title }}</h1>
+                    <span class="github">GitHub</span>
+                    <img class="thumbnail" src="../../static/projects/images/{{ project.thumbnail }}">
+                    <p>{{ project.summary }}</p>
+            </div></a>
+            {% endfor %}
+        {% else %}
+            <p>No projects are available.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
