@@ -23,6 +23,8 @@ SESSION_COOKIE_SECURE = True
 
 SECURE_SSL_REDIRECT = True
 
+SECURE_HSTS_SECONDS = 60
+
 # Application definition
 
 INSTALLED_APPS = [
