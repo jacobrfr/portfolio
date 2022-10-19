@@ -104,9 +104,9 @@
     </style>
 </head>
 <body>
-    {% load staticfiles %}
+    {% load static %}
     <header>
-        <img id="logo" src="{% static "projects/jf-low-resolution-color-logo.png" %}">
+        <img id="logo" src="{% static 'projects/images/jf-low-resolution-color-logo.png'%}"">
         <a class="navlink" href="https://github.com/jacobrfr"><b>GITHUB</b></a>
         <a class="navlink" href="https://www.linkedin.com/in/jfra01/"><b>LINKEDIN</b></a>
         <a class="navlink" href="#work"><b>WORK</b></a>
@@ -140,7 +140,7 @@
             <div class="project">
                     <h1 style="display: inline">{{ project.title }}</h1>
                     <span class="github">GitHub</span>
-                    <img class="thumbnail" src="{% static "projects/joust.png" %}">
+                    <img class="thumbnail" src="{% static 'projects/images/joust.png' %}">
                     <p>{{ project.summary }}</p>
             </div></a>
             {% endfor %}
