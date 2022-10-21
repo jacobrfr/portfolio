@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.218.218.13']
+ALLOWED_HOSTS = ['18.220.121.237']
 
 CSRF_COOKIE_SECURE = False
 
