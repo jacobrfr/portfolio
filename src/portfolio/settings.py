@@ -13,21 +13,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['django-env.eba-u3adzbqy.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*']
 
-CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
 
-SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = False
 
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 
-SECURE_HSTS_SECONDS = 60
+#SECURE_HSTS_SECONDS = 60
 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+#SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
-SECURE_HSTS_PRELOAD = True
+#SECURE_HSTS_PRELOAD = True
 
 # Application definition
 
