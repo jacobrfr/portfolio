@@ -15,7 +15,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['django-env.eba-u3adzbqy.us-east-1.elasticbeanstalk.com']
 
 CSRF_COOKIE_SECURE = True
 
