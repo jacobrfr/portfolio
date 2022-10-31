@@ -120,6 +120,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+.DJANGO_SECRET_KEY
 .env
 .venv
 env/
